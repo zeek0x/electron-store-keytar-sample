@@ -1,0 +1,24 @@
+{
+  "name": "electron-store-keytar-sample",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeek0x/electron-store-keytar-sample.git"
+  },
+  "author": "Naoki Ohzeki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeek0x/electron-store-keytar-sample/issues"
+  },
+  "homepage": "https://github.com/zeek0x/electron-store-keytar-sample#readme",
+  "dependencies": {
+    "electron": "^13.1.1",
+    "electron-store": "^8.0.0",
+    "keytar": "^7.7.0"
+  }
+}
