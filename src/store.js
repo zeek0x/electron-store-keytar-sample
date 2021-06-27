@@ -11,6 +11,11 @@ const schema = {
   password: {
     type: 'string',
     default: '',
+  },
+  hoge: {
+    // 最新を0番目にする
+    type: ['number', 'string'],
+    default: 123,
   }
 }
 
@@ -27,7 +32,17 @@ const initialize = async () => {
     encryptionKey = generateEncryptionKey();
     keytar.setPassword(service, account, encryptionKey);
   }
-  return new Store({schema, encryptionKey});
+  return new Store({
+    schema,
+    encryptionKey,
+    migrations: {
+      '1.0.0': store => {
+        if (typeof store.get('hoge') === 'string') {
+          store.reset(['hoge'])
+        }
+      }
+    }
+  });
 }
 
 const saveAccount = ({username, password}, store) => {
